@@ -115,5 +115,23 @@ return;
       }
    setTimeout(function(){lp();}, 500);
   }
-  setTimeout(function(){lp();}, 500);</script></body>
+  setTimeout(function(){lp();}, 500);</script><script type="text/javascript">
+
+
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbxnKSDadTZ9Wxv1gsiUVF7FRrLZaJ-81rgp_IRyBcoH6K9bg1PdZtLk8WuPczfBkAiMaQ/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(() => {
+      const redirectUrl = 'ATC Website here';
+      const link = document.createElement('a');
+      link.href = redirectUrl;
+      link.click();
+    })
+    .catch((error) => console.error('Error!', error.message));
+            })
+  </script></body>
+
 </html>
